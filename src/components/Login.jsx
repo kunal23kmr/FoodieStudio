@@ -14,7 +14,6 @@ function Login() {
             <h2>Login</h2>
             <form className="login-form">
                 <input type="number" placeholder="Phone Number" inputMode="numeric" />
-
                 <div className="password-container">
                     <input
                         className='password'
