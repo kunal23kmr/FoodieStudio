@@ -3,7 +3,6 @@ import './Login.css';
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
-    const [password, setPassword] = useState('');
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
