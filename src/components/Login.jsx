@@ -13,8 +13,8 @@ function Login() {
         <div className="login-container">
             <h2>Login</h2>
             <form className="login-form">
-                <input type="number" placeholder="Phone Number" inputMode="numeric" />
-                <div className="password-container">
+                <input className='phone' type="number" placeholder="Phone Number" inputMode="numeric" required autoFocus />
+                <div className="password-container" required>
                     <input
                         className='password'
                         type={showPassword ? "text" : "password"}
