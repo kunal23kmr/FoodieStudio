@@ -3,10 +3,12 @@ import './Login.css';
 
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
+    const [password, setPassword] = useState('');
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+
 
     return (
         <div className="login-container">
@@ -17,9 +19,8 @@ function Login() {
                 <div className="password-container">
                     <input
                         className='password'
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         placeholder="Password"
-                        value={password}
                     />
                     <span
                         className={`eye-icon ${showPassword ? "show" : ""}`}
