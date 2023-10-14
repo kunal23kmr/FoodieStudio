@@ -1,15 +1,24 @@
 .signup {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     background-color: rgb(241, 241, 241);
     width: 400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
+    overflow: visible;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
 }
-
+.address{
+    margin: 5px;
+    padding: 20px;
+    border: #ccc solid;
+}
+#title{
+    margin: 30px;
+}
 .signup h1 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -17,11 +26,13 @@
 }
 
 .form-group {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    width: 95%;
+    margin: 0;
     text-align: left;
 }
 
-label {
+label,p {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
@@ -50,5 +61,8 @@ button {
 
 button:hover {
     background-color: darkred;
-    /* Gray color */
+}
+
+button{
+    margin-top: 10px;
 }

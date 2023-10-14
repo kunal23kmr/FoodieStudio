@@ -14,11 +14,11 @@ function App() {
       <img className='logo' src='logo.jpg' alt='Logo image'/>
         FoodiStudio</h1>
       {/* <Home /> */}
-      <Login />
-      {/* <Signup />
-      <Blog />
-      <Contact />
-      <About /> */}
+      {/* <Login /> */}
+       <Signup />
+      {/* <Blog /> */}
+      {/* <Contact /> */}
+      {/* <About />  */}
     </>
   );
 }
