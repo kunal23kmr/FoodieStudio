@@ -15,7 +15,7 @@ function App() {
         FoodiStudio</h1>
       {/* <Home /> */}
       <Login />
-            {/* <Signup />
+      {/* <Signup />
       <Blog />
       <Contact />
       <About /> */}
