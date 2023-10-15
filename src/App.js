@@ -17,8 +17,8 @@ function App() {
       <Login />
       {/* <Signup />
       <Blog />
-      <Contact />
-      <About /> */}
+      <Contact />*/}
+      <About /> 
     </>
   );
 }
