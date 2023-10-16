@@ -11,14 +11,23 @@ function App() {
   return (
     <>
       <h1>
-      <img className='logo' src='logo.jpg' alt='Logo image'/>
+        <img className='logo' src='logo.jpg' alt='Logo image' />
         FoodiStudio</h1>
-      {/* <Home /> */}
-      {/* <Login /> */}
-       <Signup />
-      {/* <Blog /> */}
-      {/* <Contact /> */}
-      {/* <About />  */}
+      <Home />
+      {/* <hr />
+      <Login />
+      <hr />
+
+      <Signup />
+      <hr /> */}
+
+      {/* <Blog />
+      <hr />
+
+      <Contact />
+      <hr />
+
+      <About /> */}
     </>
   );
 }
