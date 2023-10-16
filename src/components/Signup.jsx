@@ -14,6 +14,11 @@ function Signup() {
         password: '',
 
     });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
     const [error, setError] = useState({
         first_name: '',
         last_name: '',
@@ -23,14 +28,64 @@ function Signup() {
         country: '',
         pincode: '',
     });
-    
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-    const validate = (e) =>{
-        
+
+    const [isValid, setValid] = useState(false);
+    const validate = (e) => {
+        setValid(true);
+        const namePattern = /^[A-Za-z\s]+$/;
+        const contactPattern = /^[0-9]+$/;
+
+        if (!namePattern.test(formData.first_name) || formData.first_name === '') {
+            setValid(false);
+            setError({ ...error, [error.first_name]: 'Invalid name!' })
+        } else {
+            setError({ ...error, [error.first_name]: '' })
+        }
+
+        if (!namePattern.test(formData.last_name) || formData.last_name === '') {
+            setValid(false);
+            setError({ ...error, [error.last_name]: 'Invalid name!' })
+        } else {
+            setError({ ...error, [error.last_name]: '' })
+        }
+
+        if (!contactPattern.test(formData.mobile_number) || formData.mobile_number.length != 10) {
+            setValid(false);
+            setError({ ...error, [error.mobile_number]: 'Invalid contact!' })
+        } else {
+            setError({ ...error, [error.mobile_number]: '' })
+        }
+
+        if (!contactPattern.test(formData.pincode)) {
+            setValid(false);
+            setError({ ...error, [error.pincode]: 'Invalid Pincode!' })
+        } else {
+            setError({ ...error, [error.pincode]: '' })
+        }
+
+        if (!namePattern.test(formData.city) || formData.city === '') {
+            setValid(false);
+            setError({ ...error, [error.city]: 'Invalid city name!' })
+        } else {
+            setError({ ...error, [error.city]: '' })
+        }
+
+        if (!namePattern.test(formData.state) || formData.state === '') {
+            setValid(false);
+            setError({ ...error, [error.state]: 'Invalid state name!' })
+        } else {
+            setError({ ...error, [error.state]: '' })
+        }
+
+        if (!namePattern.test(formData.country) || formData.country === '') {
+            setValid(false);
+            setError({ ...error, [error.country]: 'Invalid country name!' })
+        } else {
+            setError({ ...error, [error.country]: '' })
+        }
+        return isValid;
     }
+
     const handleSubmit = (e) => {
 
         e.preventDefault();
@@ -48,8 +103,6 @@ function Signup() {
                 password: '',
             });
         }
-
-
     };
 
     return (

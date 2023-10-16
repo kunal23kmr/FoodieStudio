@@ -27,7 +27,7 @@ function Login({ fun }) {
             <br></br>
             <form className="login-form" onSubmit={vailidateLogin}>
                 <label htmlFor="phone">Phone Number</label>
-                <input className='phone' id='phone' type="number" placeholder="Phone Number" inputMode="numeric" required autoFocus />
+                <input className='phone' id='phone' type="tel" placeholder="Phone Number" inputMode="numeric" required autoFocus />
                 <span>{error.phone}</span>
 
                 <div className="password-container" required>
