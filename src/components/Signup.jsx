@@ -14,27 +14,42 @@ function Signup() {
         password: '',
 
     });
-
+    const [error, setError] = useState({
+        first_name: '',
+        last_name: '',
+        mobile_number: '',
+        city: '',
+        state: '',
+        country: '',
+        pincode: '',
+    });
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
+    const validate = (e) =>{
+        
+    }
     const handleSubmit = (e) => {
-        e.preventDefault();
 
-        //sendig to server implementation
-        console.log('Submitted Data:', formData);
-        setFormData({
-            first_name: '',
-            last_name: '',
-            mobile_number: '',
-            city: '',
-            state: '',
-            country: '',
-            pincode: '',
-            password: '',
-        });
+        e.preventDefault();
+        if (validate(e)) {
+            //sendig to server implementation
+            console.log('Submitted Data:', formData);
+            setFormData({
+                first_name: '',
+                last_name: '',
+                mobile_number: '',
+                city: '',
+                state: '',
+                country: '',
+                pincode: '',
+                password: '',
+            });
+        }
+
+
     };
 
     return (
@@ -57,6 +72,8 @@ function Signup() {
                             placeholder='First Name'
                         />
                     </div>
+                    <span>{error.first_name}</span>
+
                     <div className="form-group">
                         <label htmlFor="last_name">Last Name</label>
                         <input
@@ -69,6 +86,8 @@ function Signup() {
                             placeholder='Last Name'
                         />
                     </div>
+                    <span>{error.last_name}</span>
+
 
                     <div className="form-group">
                         <label htmlFor="mobile_number">Phone Number</label>
@@ -82,6 +101,8 @@ function Signup() {
                             placeholder='Phone NUmber'
                         />
                     </div>
+                    <span>{error.mobile_number}</span>
+
 
                     <p>Address:</p>
                     {/* <hr></hr> */}
@@ -99,6 +120,8 @@ function Signup() {
                                 placeholder='City'
                             />
                         </div>
+                        <span>{error.city}</span>
+
 
                         <div className="form-group">
                             <label htmlFor="state">State</label>
@@ -112,6 +135,8 @@ function Signup() {
                                 placeholder='State'
                             />
                         </div>
+                        <span>{error.state}</span>
+
 
                         <div className="form-group">
                             <label htmlFor="country">Country</label>
@@ -125,6 +150,8 @@ function Signup() {
                                 placeholder='Country'
                             />
                         </div>
+                        <span>{error.country}</span>
+
                         <div className="form-group">
                             <label htmlFor="pincode">Pin Code</label>
                             <input
@@ -137,6 +164,8 @@ function Signup() {
                                 placeholder='Pin-Code'
                             />
                         </div>
+                        <span>{error.pincode}</span>
+
 
                     </div>
 
@@ -152,6 +181,7 @@ function Signup() {
                             placeholder='Password'
                         />
                     </div>
+
 
                     <button type="submit">Sign Up</button>
                 </form>
