@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Signup.css'
 function Signup() {
     const [formData, setFormData] = useState({
-        fname: '',
-        lname: '',
-        phone: '',
+        first_name: '',
+        last_name: '',
+        mobile_number: '',
         city: '',
         state: '',
         country: '',
@@ -33,24 +33,24 @@ function Signup() {
             <div className="signup">
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="fname">First Name</label>
+                        <label htmlFor="first_name">First Name</label>
                         <input
                             type="text"
-                            id="fname"
-                            name="fname"
-                            value={formData.fname}
+                            id="first_name"
+                            name="first_name"
+                            value={formData.first_name}
                             onChange={handleChange}
                             required
                             autoFocus
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="lname">Last Name</label>
+                        <label htmlFor="last_name">Last Name</label>
                         <input
                             type="text"
-                            id="lname"
-                            name="lname"
-                            value={formData.lname}
+                            id="last_name"
+                            name="last_name"
+                            value={formData.last_name}
                             onChange={handleChange}
                             required
                         />
@@ -60,9 +60,9 @@ function Signup() {
                         <label htmlFor="phone">Phone Number</label>
                         <input
                             type="number"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
+                            id="mobile_number"
+                            name="mobile_number"
+                            value={formData.mobile_number}
                             onChange={handleChange}
                             required
                         />
