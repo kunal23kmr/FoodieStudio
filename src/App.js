@@ -6,35 +6,41 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import './App.css';
+import Navbar from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  return (
-    <>
-      <h1>
-        <img className='logo' src='logo.jpg' alt='Logo image' />
-        FoodiStudio</h1>
-      <Home />
-      {/* <hr />
-      <Login />
-      <hr />
+  return (<>
+    <Navbar />
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/blog' element={<Blog />} />
+      <Route path='/contact' element={<Contact />} />
+      <Route path='/about' element={<About />} />
 
-      <Signup />
-      <hr /> */}
 
-      {/* <Blog />
-      <hr />
 
-      <Contact />
-      <hr />
+    </Routes>
+    <br />
 
-      <About /> */}
-      {/* <Home /> */}
-      <Login />
-      {/* <Signup />
-      <Blog />
-      <Contact />*/}
-      <About /> 
-    </>
+    {/* <Home />
+    <hr /> */}
+
+    {/* <Login /> */}
+    {/* <hr /> */}
+
+    {/* <Signup /> */}
+    {/* <hr /> */}
+
+    {/* <Blog /> */}
+    {/* <hr /> */}
+
+    {/* <Contact /> */}
+    {/* <hr /> */}
+
+    {/* <About /> */}
+    {/* <hr /> */}
+  </>
   );
 }
 
