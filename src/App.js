@@ -13,6 +13,7 @@ function App() {
       <h1>
         <img className='logo' src='logo.jpg' alt='Logo image' />
         FoodiStudio</h1>
+<<<<<<< HEAD
       <Home />
       {/* <hr />
       <Login />
@@ -28,6 +29,14 @@ function App() {
       <hr />
 
       <About /> */}
+=======
+      {/* <Home /> */}
+      <Login />
+      {/* <Signup />
+      <Blog />
+      <Contact />*/}
+      <About /> 
+>>>>>>> 2335221e2e6495b135319f7ec778ce5e38775ac7
     </>
   );
 }
