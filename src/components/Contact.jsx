@@ -1,5 +1,5 @@
 import React from 'react';
-import './Contact.css';
+import '../css/Contact.css';
 
 function Contact() {
     // Define a function to handle the form submission
@@ -13,7 +13,7 @@ function Contact() {
             <h1>Contact Us</h1>
         </header>
         <div className="contact-form">
-            <form
+            <form 
                 action='https://formspree.io/f/xwkdawpz'
                 method='POST' >
                 <label htmlFor="name">Name:</label>

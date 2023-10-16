@@ -17,12 +17,13 @@ h1 {
 }
 
 .contact-form {
-    max-width: 600px;
+    max-width: 575px;
     margin: 0 auto;
     padding: 20px;
+    margin-top: 2rem;
 }
 
-form {
+.contact-form {
     padding: 2rem;
     background-color: #f7f7f7;
     border: 1px solid #ddd;

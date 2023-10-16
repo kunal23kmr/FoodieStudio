@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import './Signup.css'
+import { Link } from 'react-router-dom';
+
+import '../css/Signup.css'
 function Signup() {
     const [formData, setFormData] = useState({
-        fname: '',
-        lname: '',
-        phone: '',
+        first_name: '',
+        last_name: '',
+        mobile_number: '',
         city: '',
         state: '',
         country: '',
@@ -23,48 +25,61 @@ function Signup() {
 
         //sendig to server implementation
         console.log('Submitted Data:', formData);
+        setFormData({
+            first_name: '',
+            last_name: '',
+            mobile_number: '',
+            city: '',
+            state: '',
+            country: '',
+            pincode: '',
+            password: '',
+        });
     };
 
     return (
         <>
-            <h1 id='title'>Sign Up for FoodieStudio</h1>
-            <b><hr></hr></b>
-            <br/>
+            <br />
             <div className="signup">
+                <h2 className='signup_title'>Sign-Up</h2>
+                <br />
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="fname">First Name</label>
+                        <label htmlFor="first_name">First Name</label>
                         <input
                             type="text"
-                            id="fname"
-                            name="fname"
-                            value={formData.fname}
+                            id="first_name"
+                            name="first_name"
+                            value={formData.first_name}
                             onChange={handleChange}
                             required
                             autoFocus
+                            placeholder='First Name'
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="lname">Last Name</label>
+                        <label htmlFor="last_name">Last Name</label>
                         <input
                             type="text"
-                            id="lname"
-                            name="lname"
-                            value={formData.lname}
+                            id="last_name"
+                            name="last_name"
+                            value={formData.last_name}
                             onChange={handleChange}
-                            required
+
+                            placeholder='Last Name'
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="phone">Phone Number</label>
+                        <label htmlFor="mobile_number">Phone Number</label>
                         <input
                             type="number"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
+                            id="mobile_number"
+                            name="mobile_number"
+                            value={formData.mobile_number}
                             onChange={handleChange}
                             required
+                            placeholder='Phone NUmber'
                         />
                     </div>
 
@@ -81,6 +96,7 @@ function Signup() {
                                 value={formData.city}
                                 onChange={handleChange}
                                 required
+                                placeholder='City'
                             />
                         </div>
 
@@ -93,6 +109,7 @@ function Signup() {
                                 value={formData.state}
                                 onChange={handleChange}
                                 required
+                                placeholder='State'
                             />
                         </div>
 
@@ -105,6 +122,7 @@ function Signup() {
                                 value={formData.country}
                                 onChange={handleChange}
                                 required
+                                placeholder='Country'
                             />
                         </div>
                         <div className="form-group">
@@ -116,6 +134,7 @@ function Signup() {
                                 value={formData.pincode}
                                 onChange={handleChange}
                                 required
+                                placeholder='Pin-Code'
                             />
                         </div>
 
@@ -124,17 +143,19 @@ function Signup() {
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
                         <input
-                            type="password"
+                            type="text"
                             id="password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
                             required
+                            placeholder='Password'
                         />
                     </div>
 
                     <button type="submit">Sign Up</button>
                 </form>
+                <Link to={'/login'} className='already_account'>Already have an account? Login</Link>
             </div>
         </>);
 }
