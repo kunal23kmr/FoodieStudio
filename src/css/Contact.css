@@ -4,16 +4,10 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: rgb(255, 41, 41);
-    color: #fff;
-    text-align: center;
-    padding: .07rem;
-    /* overflow-y: visible; */
-}
-
 h1 {
     font-size: 2rem;
+    color: red;
+    text-align: center;
 }
 
 .contact-form {
@@ -62,15 +56,12 @@ button {
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ddd;
+    color: black;
 }
 
 .contact-info h2 {
     font-size: 24px;
 }
-
-/* .map {
-   
-} */
 
 .business-hours {
     max-width: 600px;

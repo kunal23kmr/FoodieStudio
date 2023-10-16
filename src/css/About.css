@@ -59,8 +59,3 @@ h2:nth-child(4) {
   margin: 20px;
   text-align: center;
 }
-
-.team-member img {
-  border-radius: 50%;
-  max-width: 150px;
-}
