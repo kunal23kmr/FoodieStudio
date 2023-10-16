@@ -1,44 +1,92 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/Login.css';
+import axios from 'axios'
 
 function Login({ fun }) {
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
     const [error, setError] = useState({
-        phone: '',
+        mobile_number: '',
         password: ''
     });
+
+    const [formData, setFormData] = useState({
+        mobile_number: '',
+        password: '',
+    });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
-    const vailidateLogin = (event) => {
-        //find in data base and return corresponding value and set the user through the fun().
-        const phone = event.phone;
-        const password = event.password;
+    const contactPattern = /^[0-9]+$/;
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setError({
+            mobile_number: '',
+            password: '',
+        });
+
+        //find in data base and return corresponding value and set the user through the fun().
+
+        if (formData.mobile_number === '' || !contactPattern.test(formData.mobile_number)) {
+            setError({ ...error, mobile_number: 'Invalid phone number!' });
+        }
+
+        axios.post('http://localhost:3001/login', formData)
+            .then(res => {
+                console.log(res)
+                fun(res.data[0]);
+                setFormData(() => {
+                    return {
+                        mobile_number: '',
+                        password: '',
+                    };
+                });
+                alert('Sucessfully Login!');
+                navigate('/profile');
+            })
+            .catch(err => {
+                console.log('Error aaya hai :', err);
+                setError({ ...error, mobile_number: 'Mobile number not registered.' });
+            });
     }
 
     return (
         <div className="login-container">
             <h2>Login</h2>
             <br></br>
-            <form className="login-form" onSubmit={vailidateLogin}>
+            <form className="login-form" onSubmit={handleSubmit}>
                 <label htmlFor="phone">Phone Number</label>
-                <input className='phone' id='phone' type="tel" placeholder="Phone Number" inputMode="numeric" required autoFocus />
-                <span>{error.phone}</span>
+                <input className='phone'
+                    id='mobile_number'
+                    name='mobile_number'
+                    type="text"
+                    placeholder="Phone Number"
+                    inputMode="numeric"
+                    value={formData.mobile_number}
+                    onChange={handleChange}
+                    required autoFocus />
+                <span className='error_msg'>{error.mobile_number}</span>
 
                 <div className="password-container" required>
                     <label htmlFor="password_login">Password</label>
 
                     <input
                         id='password_login'
-                        name='phone'
+                        name='password'
                         type={showPassword ? "text" : "password"}
                         placeholder="Password"
-
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
                     />
                     <span
                         className={`eye-icon ${showPassword ? "show" : ""}`}
@@ -46,7 +94,7 @@ function Login({ fun }) {
                     >show
                     </span>
                 </div>
-                <span>{error.password}</span>
+                <span className='error_msg'>{error.password}</span>
 
                 <button type='submit' className="login-button">Login</button>
             </form>

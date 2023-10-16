@@ -10,9 +10,13 @@ function ViewProfile({ currUser }) {
         country: '',
         password: ''
     });
+    
     // setUser({...}) // get data from database and then update and show.
     return (<>
         <h1>View Profile</h1>
+        <button>
+
+        </button>
     </>);
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/Signup.css';
 import axios from 'axios'
 
@@ -14,7 +14,7 @@ const Signup = () => {
         pincode: '',
         password: '',
     });
-
+    const navigate = useNavigate();
     const [error, setError] = useState({
         first_name: '',
         last_name: '',
@@ -48,7 +48,7 @@ const Signup = () => {
 
         if (!namePattern.test(formData.first_name) || !formData.first_name) { setError({ ...error, first_name: 'Invalid name!' }); }
         if (!namePattern.test(formData.last_name) || !formData.last_name) { setError({ ...error, last_name: 'Invalid name!' }); }
-        
+
         if (!a && (!contactPattern.test(formData.mobile_number) || !formData.mobile_number)) { setError({ ...error, mobile_number: 'Invalid contact!' }); seta(false); }
 
         if (!contactPattern.test(formData.pincode) || !formData.pincode) { setError({ ...error, pincode: 'Invalid Pincode!' }); }
@@ -83,6 +83,8 @@ const Signup = () => {
                             password: '',
                         };
                     });
+                    alert('Sucessfully registered!');
+                    navigate('/login');
                 })
                 .catch(err => {
                     console.log('error aaya', err, a);
