@@ -10,25 +10,36 @@ function About() {
   const handleButtonClick = (route) => {
     navigate(route);
   };
-  return (
-    <div className="about-page">
-      <div className="about-content">
-        <h1>About Us</h1>
-        <p>
-          Welcome to our food ordering and delivery service. We are dedicated to bringing you the best dining experience at your doorstep. Our mission is to provide high-quality, delicious food with fast and reliable delivery.
-        </p>
-        <p>
-          Whether you're looking for a quick lunch, a family dinner, or catering for a special event, we have a wide range of menu options to satisfy your cravings.
-        </p>
-        <p>
-          Thank you for choosing us. We look forward to serving you and making your dining experience extraordinary.
-        </p>
+  return (<div className="about-container">
+  <div className="about-content">
+    <h1>About Us</h1>
+    <p>Welcome to FoodieStudio!</p>
+
+    <h2>Our Story</h2>
+    <p>At FoodieStudio, we're passionate about food. Our journey began with a simple idea: to connect people with delicious, restaurant-quality meals, delivered right to their doorstep. We understand that life can be busy, and dining out is not always an option. That's why we're here to make your dining experience hassle-free and delightful.</p>
+
+    <h2>Our Mission</h2>
+    <p><strong>"Bringing Flavor to Your Doorstep"</strong></p>
+    <p>Our mission is to deliver not just food but an experience. We're committed to providing you with an extensive variety of cuisines and dishes to cater to your cravings, whether it's a comforting bowl of pasta, a sizzling burger, or a healthy salad. We believe that everyone should have access to great food, and our service is designed to make it happen.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions, feedback, or suggestions, we'd love to hear from you. You can reach out to us at [contact information], and we'll be happy to assist you.</p>
+
+    <h2>Meet Our Team</h2>
+    <div className="team-members">
+      <div className="team-member">
+        <img src="team-member-1.jpg" alt="Team Member 1" />
+        <h3>Keerti Singh</h3>
+        <p>Co-Founder & CEO</p>
       </div>
-      <div className="about-buttons">
-        <button className="contact-button" onClick={() => handleButtonClick('/contact')}>Contact Us</button>
-        <button className="order-button" onClick={() => handleButtonClick('/')}>Order Now</button>
+      <div className="team-member">
+        <img src="team-member-2.jpg" alt="Team Member 2" />
+        <h3>Kunal Sahu</h3>
+        <p>Head Chef</p>
       </div>
     </div>
+  </div>
+</div>
   );
 }
 
