@@ -30,7 +30,7 @@ function Signup() {
     });
 
     const [isValid, setValid] = useState(false);
-    const validate = (e) => {
+    const validate = () => {
         setValid(true);
         const namePattern = /^[A-Za-z\s]+$/;
         const contactPattern = /^[0-9]+$/;
@@ -89,7 +89,7 @@ function Signup() {
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        if (validate(e)) {
+        if (validate()) {
             //sendig to server implementation
             console.log('Submitted Data:', formData);
             setFormData({
