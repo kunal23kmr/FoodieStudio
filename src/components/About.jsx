@@ -5,10 +5,10 @@ import './About.css';
 
 function About() {
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleButtonClick = (route) => {
-    history(route);
+    navigate(route);
   };
   return (
     <div className="about-page">
