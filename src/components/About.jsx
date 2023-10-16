@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import './About.css';
+import '../css/About.css';
 
 function About() {
 

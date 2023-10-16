@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Signup.css'
+import '../css/Signup.css'
 function Signup() {
     const [formData, setFormData] = useState({
         first_name: '',
@@ -23,14 +23,24 @@ function Signup() {
 
         //sendig to server implementation
         console.log('Submitted Data:', formData);
+        setFormData({
+            first_name: '',
+            last_name: '',
+            mobile_number: '',
+            city: '',
+            state: '',
+            country: '',
+            pincode: '',
+            password: '',
+        });
     };
 
     return (
         <>
-            <h1 id='title'>Sign Up for FoodieStudio</h1>
-            <b><hr></hr></b>
-            <br/>
+            <br />
             <div className="signup">
+                <h2 className='signup_title'>Sign-Up</h2>
+                <br />
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="first_name">First Name</label>
@@ -42,6 +52,7 @@ function Signup() {
                             onChange={handleChange}
                             required
                             autoFocus
+                            placeholder='First Name'
                         />
                     </div>
                     <div className="form-group">
@@ -52,12 +63,13 @@ function Signup() {
                             name="last_name"
                             value={formData.last_name}
                             onChange={handleChange}
-                            required
+
+                            placeholder='Last Name'
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="phone">Phone Number</label>
+                        <label htmlFor="mobile_number">Phone Number</label>
                         <input
                             type="number"
                             id="mobile_number"
@@ -65,6 +77,7 @@ function Signup() {
                             value={formData.mobile_number}
                             onChange={handleChange}
                             required
+                            placeholder='Phone NUmber'
                         />
                     </div>
 
@@ -81,6 +94,7 @@ function Signup() {
                                 value={formData.city}
                                 onChange={handleChange}
                                 required
+                                placeholder='City'
                             />
                         </div>
 
@@ -93,6 +107,7 @@ function Signup() {
                                 value={formData.state}
                                 onChange={handleChange}
                                 required
+                                placeholder='State'
                             />
                         </div>
 
@@ -105,6 +120,7 @@ function Signup() {
                                 value={formData.country}
                                 onChange={handleChange}
                                 required
+                                placeholder='Country'
                             />
                         </div>
                         <div className="form-group">
@@ -116,6 +132,7 @@ function Signup() {
                                 value={formData.pincode}
                                 onChange={handleChange}
                                 required
+                                placeholder='Pin-Code'
                             />
                         </div>
 
@@ -124,12 +141,13 @@ function Signup() {
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
                         <input
-                            type="password"
+                            type="text"
                             id="password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
                             required
+                            placeholder='Password'
                         />
                     </div>
 

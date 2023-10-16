@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 
-import './Navbar.css';
+import '../css/Navbar.css';
 
 function Navbar() {
     return (<>
@@ -28,6 +28,9 @@ function Navbar() {
                 </li>
                 <li>
                     <NavLink to={'/contact'}>Contact</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/profile'}>Profile</NavLink>
                 </li>
             </ul>
         </nav>

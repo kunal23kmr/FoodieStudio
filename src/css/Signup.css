@@ -45,6 +45,7 @@ input {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
 
 button {
@@ -65,4 +66,8 @@ button:hover {
 
 button{
     margin-top: 10px;
+}
+
+.signup_title{
+    margin: 0 auto ;
 }
