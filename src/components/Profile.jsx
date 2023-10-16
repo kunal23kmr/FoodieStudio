@@ -1,13 +1,12 @@
-import React from "react";
-import { useNavigate } from "react-router";
+import React, { useState } from "react";
+import ViewProfile from "./ViewProfile.jsx";
+import Login from "./Login";
 
 function Profile() {
-    const navigate = useNavigate();
-    // Use a ternary operator to conditionally navigate
+    const [isLog, setisLog] = useState(0);
     return (<>
-        {(prop.isLog !== 0) ? navigate('/viewprofile') : navigate('/login')}
-    </>
-    );
+        {(isLog !== 0) ? <ViewProfile currUser={isLog} /> : <Login fun={setisLog}/>}
+    </>);
 }
 
 export default Profile;

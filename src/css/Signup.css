@@ -71,3 +71,9 @@ button{
 .signup_title{
     margin: 0 auto ;
 }
+
+.already_account{
+    margin: 10px auto;
+    margin-top: 20px;
+    text-decoration: none;
+}

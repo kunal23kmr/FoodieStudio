@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import '../css/Signup.css'
 function Signup() {
     const [formData, setFormData] = useState({
@@ -153,6 +155,7 @@ function Signup() {
 
                     <button type="submit">Sign Up</button>
                 </form>
+                <Link to={'/login'} className='already_account'>Already have an account? Login</Link>
             </div>
         </>);
 }

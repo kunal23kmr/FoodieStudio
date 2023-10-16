@@ -1,4 +1,4 @@
-function ViewProfile() {
+function ViewProfile({id}) {
     return (<>
         <h1>View Profile</h1>
     </>);
