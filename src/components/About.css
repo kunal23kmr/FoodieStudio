@@ -2,27 +2,41 @@
   display: flex;
   justify-content: space-between;
   background-color: #f5f5f5;
-  background-image: url('https://images.creativemarket.com/0.1.0/ps/5113625/1820/623/m1/fpnw/wm1/nsl5ws0dak2vfvklerldcsyxyvlrodiw5hr2jpvjjamp9zuuf82fr08riqg2rvho-.jpg?1538043854&s=befe1de10915e41f0ffaffb6e606a7ad');
+  background-image: url('../images/back_palet.jpg');
+  background-size: 100vw 100%;
+  background-repeat: no-repeat;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
 }
 
 .about-content {
   flex: 1;
   text-align: center;
+  padding: 0.3rem;
 }
 
-h1 {
+.tt {
   font-size: 24px;
-  color: #333;
+  color: #ffffff;
 }
 
 p {
   font-size: 16px;
-  color: #666;
+  /* font-color: #fffbfb; */
+  color: #f5f5f5;
   margin-bottom: 20px;
   text-align: left;
+}
+
+.content {
+  background-color: rgb(250, 235, 215,0.9);
+  color: white;
+  margin: 20px;
+  border-radius: 1rem;
+  
+  padding: 1rem;
 }
 
 .about-buttons {
