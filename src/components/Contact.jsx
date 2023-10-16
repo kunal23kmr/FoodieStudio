@@ -8,7 +8,7 @@ function Contact() {
         // Add your form handling logic here
     };
 
-    return (<div>
+    return (<div className='contact'>
         <header>
             <h1>Contact Us</h1>
         </header>
