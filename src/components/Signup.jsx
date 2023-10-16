@@ -25,7 +25,6 @@ const Signup = () => {
         pincode: '',
     });
 
-    const [isValid, setValid] = useState(true);
     const [a, seta] = useState(true);
 
     const handleChange = (e) => {
@@ -33,100 +32,148 @@ const Signup = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const makefalse = () => {
-        setValid(false);
-    };
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     setError({
+    //         first_name: '',
+    //         last_name: '',
+    //         mobile_number: '',
+    //         city: '',
+    //         state: '',
+    //         country: '',
+    //         pincode: '',
+    //     });
+    //     const namePattern = /^[A-Za-z\s]+$/;
+    //     const contactPattern = /^[0-9]+$/;
+
+    //     if (!namePattern.test(formData.first_name) || !formData.first_name) { setError({ ...error, first_name: 'Invalid name!' }); }
+    //     if (!namePattern.test(formData.last_name) || !formData.last_name) { setError({ ...error, last_name: 'Invalid name!' }); }
+        
+    //     if (!a && (!contactPattern.test(formData.mobile_number) || !formData.mobile_number)) { setError({ ...error, mobile_number: 'Invalid contact!' }); seta(false); }
+
+    //     if (!contactPattern.test(formData.pincode) || !formData.pincode) { setError({ ...error, pincode: 'Invalid Pincode!' }); }
+    //     if (formData.city === '') { setError({ ...error, city: 'Invalid city name!' }); }
+    //     if (formData.state === '') { setError({ ...error, state: 'Invalid state name!' }); }
+    //     if (formData.country === '') { setError({ ...error, country: 'Invalid country name!' }); }
+
+    //     if (error.first_name === '' &&
+    //         error.last_name === '' &&
+    //         error.mobile_number === '' &&
+    //         error.city === '' &&
+    //         error.state === '' &&
+    //         error.country === '' &&
+    //         error.pincode === '' && a === true
+    //     ) {
+    //         console.log(error)
+    //         // Sending to server implementation
+    //         axios.post('http://localhost:3001/signup', formData)
+    //             .then(res => {
+    //                 seta(true);
+    //                 console.log('responce aaya', res);
+    //                 setFormData((prevFormData) => {
+    //                     console.log('Submitted Data: aaya', prevFormData);
+    //                     return {
+    //                         first_name: '',
+    //                         last_name: '',
+    //                         mobile_number: '',
+    //                         city: '',
+    //                         state: '',
+    //                         country: '',
+    //                         pincode: '',
+    //                         password: '',
+    //                     };
+    //                 });
+    //             })
+    //             .catch(err => {
+    //                 console.log('error aaya', err, a);
+    //                 setError({ ...error, mobile_number: 'Mobile number already registered.' });
+    //                 seta(false);
+    //             });
+    //     } else {
+    //         console.log('Invalid Data:', formData);
+    //         console.log('Error is:', error);
+    //         if (a === false) { setError({ ...error, mobile_number: 'Mobile number already registered.' }); }
+    //     }
+    // };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+    event.preventDefault();
+    setError({
+        first_name: '',
+        last_name: '',
+        mobile_number: '',
+        city: '',
+        state: '',
+        country: '',
+        pincode: '',
+    });
+    const namePattern = /^[A-Za-z\s]+$/;
+    const contactPattern = /^[0-9]+$/;
 
-        setValid(true);
-        setError({
-            first_name: '',
-            last_name: '',
-            mobile_number: '',
-            city: '',
-            state: '',
-            country: '',
-            pincode: '',
-        });
+    if (!namePattern.test(formData.first_name) || !formData.first_name) {
+        setError({ ...error, first_name: 'Invalid name!' });
+    }
+    if (!namePattern.test(formData.last_name) || !formData.last_name) {
+        setError({ ...error, last_name: 'Invalid name!' });
+    }
+    if (!a && (!contactPattern.test(formData.mobile_number) || !formData.mobile_number)) {
+        setError({ ...error, mobile_number: 'Invalid contact!' });
+    }
+    if (!contactPattern.test(formData.pincode) || !formData.pincode) {
+        setError({ ...error, pincode: 'Invalid Pincode!' });
+    }
+    if (formData.city === '') {
+        setError({ ...error, city: 'Invalid city name!' });
+    }
+    if (formData.state === '') {
+        setError({ ...error, state: 'Invalid state name!' });
+    }
+    if (formData.country === '') {
+        setError({ ...error, country: 'Invalid country name!' });
+    }
 
-        const namePattern = /^[A-Za-z\s]+$/;
-        const contactPattern = /^[0-9]+$/;
-
-        if (!namePattern.test(formData.first_name)) {
-            makefalse();
-            setError({ ...error, first_name: 'Invalid name!' });
-        }
-
-        if (!namePattern.test(formData.last_name)) {
-            makefalse();
-            setError({ ...error, last_name: 'Invalid name!' });
-        }
-
-        if (!a && !contactPattern.test(formData.mobile_number)) {
-            makefalse();
-            setError({ ...error, mobile_number: 'Invalid contact!' });
-        }
-
-        if (!contactPattern.test(formData.pincode)) {
-            makefalse();
-            setError({ ...error, pincode: 'Invalid Pincode!' });
-        }
-
-        if (formData.city === '') {
-            makefalse();
-            setError({ ...error, city: 'Invalid city name!' });
-        }
-
-        if (formData.state === '') {
-            makefalse();
-            setError({ ...error, state: 'Invalid state name!' });
-        }
-
-        if (formData.country === '') {
-            makefalse();
-            setError({ ...error, country: 'Invalid country name!' });
-        }
-
-        if (error.first_name === '' &&
-            error.last_name === '' &&
-            error.city === '' &&
-            error.mobile_number === '' &&
-            error.country === '' &&
-            error.state === '' &&
-            error.pincode === '' && a === true
-        ) {
-            // Sending to server implementation
-            axios.post('http://localhost:3001/signup', formData)
-                .then(res => {
-                    seta(true);
-                    console.log('responce aaya', res);
-                    setFormData((prevFormData) => {
-                        console.log('Submitted Data: aaya', prevFormData);
-                        return {
-                            first_name: '',
-                            last_name: '',
-                            mobile_number: '',
-                            city: '',
-                            state: '',
-                            country: '',
-                            pincode: '',
-                            password: '',
-                        };
-                    });
-                })
-                .catch(err => {
-                    console.log('error aaya', err, a);
+    // Check if there are validation errors before making the Axios request
+    if (
+        error.first_name === '' &&
+        error.last_name === '' &&
+        error.mobile_number === '' &&
+        error.city === '' &&
+        error.state === '' &&
+        error.country === '' &&
+        error.pincode === ''
+    ) {
+        // Sending to server implementation
+        axios.post('http://localhost:3001/signup', formData)
+            .then(res => {
+                seta(true);
+                console.log('Response received:', res);
+                setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    first_name: '',
+                    last_name: '',
+                    mobile_number: '',
+                    city: '',
+                    state: '',
+                    country: '',
+                    pincode: '',
+                    password: '',
+                }));
+            })
+            .catch(err => {
+                console.log('Error received:', err);
+                if (err.response && err.response.data === 'Mobile number already registered.') {
                     setError({ ...error, mobile_number: 'Mobile number already registered.' });
-                    seta(false);
-                });
-        } else {
-            console.log('Invalid Data:', formData);
-            console.log('Error is:', error);
-            setError({ ...error, mobile_number: 'Mobile number already registered.' });
-        }
-    };
+                } else {
+                    setError({ ...error, mobile_number: 'An error occurred.' });
+                }
+                seta(false);
+            });
+    } else {
+        console.log('Invalid Data:', formData);
+        console.log('Error is:', error);
+    }
+};
+
     return (
         <>
             <br />
