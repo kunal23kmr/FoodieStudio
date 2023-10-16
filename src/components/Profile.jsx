@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
-function Profile({ isLog, na }) {
+function Profile() {
+    const navigate = useNavigate();
     // Use a ternary operator to conditionally navigate
     return (<>
-        {(isLog !== 0) ? na('/viewprofile') : na('/login')}
+        {(prop.isLog !== 0) ? navigate('/viewprofile') : navigate('/login')}
     </>
     );
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
+import { FaUser } from "react-icons/fa";
 
 import '../css/Navbar.css';
 
@@ -30,7 +31,7 @@ function Navbar() {
                     <NavLink to={'/contact'}>Contact</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/profile'}>Profile</NavLink>
+                    <NavLink to={'/profile'}><FaUser size={25} color="black" /></NavLink>
                 </li>
             </ul>
         </nav>

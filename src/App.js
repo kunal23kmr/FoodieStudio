@@ -1,5 +1,5 @@
-import React,{useState} from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './css/App.css';
 
 import About from './components/About';
@@ -13,8 +13,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 
 function App() {
-  const [user, setUser] = useState(0);
-  const navigate = useNavigate();
 
   return (<>
     <Navbar />
@@ -23,7 +21,7 @@ function App() {
       <Route path='/blog' element={<Blog />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/about' element={<About />} />
-      <Route path='/profile' element={<Profile isLog={user} na={navigate} />} />
+      <Route path='/profile' element={<Profile />} />
       <Route path='/viewprofile' element={<ViewProfile />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
