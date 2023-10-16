@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../css/Signup.css';
+import axios from 'axios'
 
-import '../css/Signup.css'
-function Signup() {
+const Signup = () => {
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
@@ -12,12 +13,7 @@ function Signup() {
         country: '',
         pincode: '',
         password: '',
-
     });
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
 
     const [error, setError] = useState({
         first_name: '',
@@ -29,87 +25,113 @@ function Signup() {
         pincode: '',
     });
 
-    const [isValid, setValid] = useState(false);
-    const validate = () => {
+    const [isValid, setValid] = useState(true);
+    const [a, seta] = useState(true);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const makefalse = () => {
+        setValid(false);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
         setValid(true);
+        setError({
+            first_name: '',
+            last_name: '',
+            mobile_number: '',
+            city: '',
+            state: '',
+            country: '',
+            pincode: '',
+        });
+
         const namePattern = /^[A-Za-z\s]+$/;
         const contactPattern = /^[0-9]+$/;
 
-        if (!namePattern.test(formData.first_name) || formData.first_name === '') {
-            setValid(false);
-            setError({ ...error, [error.first_name]: 'Invalid name!' })
-        } else {
-            setError({ ...error, [error.first_name]: '' })
+        if (!namePattern.test(formData.first_name)) {
+            makefalse();
+            setError({ ...error, first_name: 'Invalid name!' });
         }
 
-        if (!namePattern.test(formData.last_name) || formData.last_name === '') {
-            setValid(false);
-            setError({ ...error, [error.last_name]: 'Invalid name!' })
-        } else {
-            setError({ ...error, [error.last_name]: '' })
+        if (!namePattern.test(formData.last_name)) {
+            makefalse();
+            setError({ ...error, last_name: 'Invalid name!' });
         }
 
-        if (!contactPattern.test(formData.mobile_number) || formData.mobile_number.length != 10) {
-            setValid(false);
-            setError({ ...error, [error.mobile_number]: 'Invalid contact!' })
-        } else {
-            setError({ ...error, [error.mobile_number]: '' })
+        if (!a && !contactPattern.test(formData.mobile_number)) {
+            makefalse();
+            setError({ ...error, mobile_number: 'Invalid contact!' });
         }
 
         if (!contactPattern.test(formData.pincode)) {
-            setValid(false);
-            setError({ ...error, [error.pincode]: 'Invalid Pincode!' })
-        } else {
-            setError({ ...error, [error.pincode]: '' })
+            makefalse();
+            setError({ ...error, pincode: 'Invalid Pincode!' });
         }
 
-        if (!namePattern.test(formData.city) || formData.city === '') {
-            setValid(false);
-            setError({ ...error, [error.city]: 'Invalid city name!' })
-        } else {
-            setError({ ...error, [error.city]: '' })
+        if (formData.city === '') {
+            makefalse();
+            setError({ ...error, city: 'Invalid city name!' });
         }
 
-        if (!namePattern.test(formData.state) || formData.state === '') {
-            setValid(false);
-            setError({ ...error, [error.state]: 'Invalid state name!' })
-        } else {
-            setError({ ...error, [error.state]: '' })
+        if (formData.state === '') {
+            makefalse();
+            setError({ ...error, state: 'Invalid state name!' });
         }
 
-        if (!namePattern.test(formData.country) || formData.country === '') {
-            setValid(false);
-            setError({ ...error, [error.country]: 'Invalid country name!' })
-        } else {
-            setError({ ...error, [error.country]: '' })
+        if (formData.country === '') {
+            makefalse();
+            setError({ ...error, country: 'Invalid country name!' });
         }
-        return isValid;
-    }
 
-    const handleSubmit = (e) => {
-
-        e.preventDefault();
-        if (validate()) {
-            //sendig to server implementation
-            console.log('Submitted Data:', formData);
-            setFormData({
-                first_name: '',
-                last_name: '',
-                mobile_number: '',
-                city: '',
-                state: '',
-                country: '',
-                pincode: '',
-                password: '',
-            });
+        if (error.first_name === '' &&
+            error.last_name === '' &&
+            error.city === '' &&
+            error.mobile_number === '' &&
+            error.country === '' &&
+            error.state === '' &&
+            error.pincode === '' && a === true
+        ) {
+            // Sending to server implementation
+            axios.post('http://localhost:3001/signup', formData)
+                .then(res => {
+                    seta(true);
+                    console.log('responce aaya', res);
+                    setFormData((prevFormData) => {
+                        console.log('Submitted Data: aaya', prevFormData);
+                        return {
+                            first_name: '',
+                            last_name: '',
+                            mobile_number: '',
+                            city: '',
+                            state: '',
+                            country: '',
+                            pincode: '',
+                            password: '',
+                        };
+                    });
+                })
+                .catch(err => {
+                    console.log('error aaya', err, a);
+                    setError({ ...error, mobile_number: 'Mobile number already registered.' });
+                    seta(false);
+                });
+        } else {
+            console.log('Invalid Data:', formData);
+            console.log('Error is:', error);
+            setError({ ...error, mobile_number: 'Mobile number already registered.' });
         }
     };
-
     return (
         <>
             <br />
             <div className="signup">
-                <h2 className='signup_title'>Sign-Up</h2>
+                <h2 className="signup_title">Sign-Up</h2>
                 <br />
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
@@ -120,12 +142,11 @@ function Signup() {
                             name="first_name"
                             value={formData.first_name}
                             onChange={handleChange}
-                            required
                             autoFocus
-                            placeholder='First Name'
+                            placeholder="First Name"
                         />
                     </div>
-                    <span>{error.first_name}</span>
+                    <span className="error_msg">{error.first_name}</span>
 
                     <div className="form-group">
                         <label htmlFor="last_name">Last Name</label>
@@ -135,12 +156,10 @@ function Signup() {
                             name="last_name"
                             value={formData.last_name}
                             onChange={handleChange}
-
-                            placeholder='Last Name'
+                            placeholder="Last Name"
                         />
                     </div>
-                    <span>{error.last_name}</span>
-
+                    <span className="error_msg">{error.last_name}</span>
 
                     <div className="form-group">
                         <label htmlFor="mobile_number">Phone Number</label>
@@ -150,17 +169,13 @@ function Signup() {
                             name="mobile_number"
                             value={formData.mobile_number}
                             onChange={handleChange}
-                            required
-                            placeholder='Phone NUmber'
+                            placeholder="Phone Number"
                         />
                     </div>
-                    <span>{error.mobile_number}</span>
-
+                    <span className="error_msg">{error.mobile_number}</span>
 
                     <p>Address:</p>
-                    {/* <hr></hr> */}
                     <div className="address">
-
                         <div className="form-group">
                             <label htmlFor="city">City name</label>
                             <input
@@ -169,12 +184,10 @@ function Signup() {
                                 name="city"
                                 value={formData.city}
                                 onChange={handleChange}
-                                required
-                                placeholder='City'
+                                placeholder="City"
                             />
                         </div>
-                        <span>{error.city}</span>
-
+                        <span className="error_msg">{error.city}</span>
 
                         <div className="form-group">
                             <label htmlFor="state">State</label>
@@ -184,12 +197,10 @@ function Signup() {
                                 name="state"
                                 value={formData.state}
                                 onChange={handleChange}
-                                required
-                                placeholder='State'
+                                placeholder="State"
                             />
                         </div>
-                        <span>{error.state}</span>
-
+                        <span className="error_msg">{error.state}</span>
 
                         <div className="form-group">
                             <label htmlFor="country">Country</label>
@@ -199,11 +210,10 @@ function Signup() {
                                 name="country"
                                 value={formData.country}
                                 onChange={handleChange}
-                                required
-                                placeholder='Country'
+                                placeholder="Country"
                             />
                         </div>
-                        <span>{error.country}</span>
+                        <span className="error_msg">{error.country}</span>
 
                         <div className="form-group">
                             <label htmlFor="pincode">Pin Code</label>
@@ -213,13 +223,10 @@ function Signup() {
                                 name="pincode"
                                 value={formData.pincode}
                                 onChange={handleChange}
-                                required
-                                placeholder='Pin-Code'
+                                placeholder="Pin-Code"
                             />
                         </div>
-                        <span>{error.pincode}</span>
-
-
+                        <span className="error_msg">{error.pincode}</span>
                     </div>
 
                     <div className="form-group">
@@ -230,17 +237,19 @@ function Signup() {
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
+                            placeholder="Password"
                             required
-                            placeholder='Password'
                         />
                     </div>
 
-
                     <button type="submit">Sign Up</button>
                 </form>
-                <Link to={'/login'} className='already_account'>Already have an account? Login</Link>
+                <Link to={'/login'} className="already_account">
+                    Already have an account? Login
+                </Link>
             </div>
-        </>);
+        </>
+    );
 }
 
 export default Signup;
