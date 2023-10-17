@@ -1,0 +1,59 @@
+.App {
+    text-align: center;
+  }
+  
+  .food-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .food-card {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  .food-card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.details {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin: 20px;
+  border: 20px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 300px; /* Optional: Set a minimum width for better appearance */
+  min-width: 400px;
+  box-shadow: 20 20 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+}
+
+  .details button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: 200px;
+    cursor: pointer;
+    width: 200px;
+  }
+  
+  .details button:hover {
+    background-color: #0056b3;
+  }
+.close-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  width: 200px; 
+}
+
+    
