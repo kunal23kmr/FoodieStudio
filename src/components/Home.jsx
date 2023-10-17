@@ -101,11 +101,13 @@ function Home() {
 
   return (
     <div className="App">
+      <br />
+      <br />
+      <br />
+      <br />
       <h1>Welcome to FoodieStudio</h1><br /><br />
       <h2>
-        {/* <u> */}
-          Browse your Favorite food from your Favorite Restaurants
-        {/* </u> */}
+        Browse your Favorite food from your Favorite Restaurants
       </h2><br />
       <div className="food-cards">
         {foodItems.map((item) => (
