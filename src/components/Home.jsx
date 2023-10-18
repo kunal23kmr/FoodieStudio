@@ -50,7 +50,7 @@ function Home() {
       title: 'Dhokla',
       description: 'Description of Food Item 3.',
       restaurant: 'Swadeshi Bhog',
-      image: image3,
+      image: image6,
       price: '$20',
     },
     {
@@ -58,7 +58,7 @@ function Home() {
       title: 'Manchurian',
       description: 'Description of Food Item 4.',
       restaurant: 'Fast Foodies',
-      image: image4,
+      image: image3,
       price: '$20',
     },
     {
@@ -66,7 +66,7 @@ function Home() {
       title: 'Paneer Butter Masala',
       description: 'Description of Food Item 5.',
       restaurant: 'Kunal da Dhaba',
-      image: image5,
+      image: image4,
       price: '$20',
     },
     {
@@ -74,7 +74,7 @@ function Home() {
       title: 'Butter Naan',
       description: 'Description of Food Item 6.',
       restaurant: 'Swadeshi Bhog',
-      image: image6,
+      image: image7,
       price: '$20',
     },
     {
@@ -82,7 +82,7 @@ function Home() {
       title: 'Spring Roll',
       description: 'Description of Food Item 7.',
       restaurant: 'Fast Foodies',
-      image: image7,
+      image: image8,
       price: '$20',
     },
     {
@@ -90,7 +90,7 @@ function Home() {
       title: 'MOMOS',
       description: 'Description of Food Item 8.',
       restaurant: 'Swadeshi Bhog',
-      image: image8,
+      image: image9,
       price: '$20',
     },
     {
@@ -98,7 +98,7 @@ function Home() {
       title: 'Amritsari Kulcha',
       description: 'Description of Food Item 9.',
       restaurant: 'Swadeshi Bhog',
-      image: image9,
+      image: image7,
       price: '$20',
     },
     {
