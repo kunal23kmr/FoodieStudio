@@ -64,12 +64,18 @@ h2 {
 }
 
 
-#image_card {
-  height: 250px;
-  width: auto;
+.image_card {
+  width: 300px;
+  height: 300px;
+  border: 10px solid #333;
+  /* 10px solid border with a dark gray color */
+  border-radius: 20px;
+  /* Rounded corners */
+  background-color: #fff;
+  /* Background color of the frame */
 }
 
-#image_show{
+#image_show {
   /* width:70vw; */
   height: 300px;
   width: auto;
