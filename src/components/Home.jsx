@@ -2,7 +2,16 @@ import React from "react";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
-import image1 from '../images/food_images';
+import image1 from '../images/food_images'
+import image2 from '../images/food_images'
+import image3 from '../images/food_images'
+import image4 from '../images/food_images'
+import image5 from '../images/food_images'
+import image6 from '../images/food_images'
+import image7 from '../images/food_images'
+import image8 from '../images/food_images'
+import image9 from '../images/food_images'
+import image10 from '../images/food_images'
 
 const foodItems = [
   {
