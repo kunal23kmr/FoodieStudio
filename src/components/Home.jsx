@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
-import axios from 'axios';
-import image1 from '../images/food_images/food1.jpg';
+import image1 from '../images/food_images';
 
 const foodItems = [
   {
@@ -20,7 +19,7 @@ const foodItems = [
     title: 'Cholle Bhature',
     description: 'Description of Food Item 2.',
     restaurant: 'Swadeshi Bhog',
-    image: image1,
+    image:image1,
     price: '$20',
   },
   {
