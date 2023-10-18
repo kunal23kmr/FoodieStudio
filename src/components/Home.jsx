@@ -3,20 +3,30 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 import axios from 'axios';
-// import image1 from './food_images/food1.jpg';
+
+import image1 from '../images/food_images/food1.jpg';
+import image2 from '../images/food_images/food2.jpg';
+import image3 from '../images/food_images/food3.webp';
+import image4 from '../images/food_images/food4.jpg';
+import image5 from '../images/food_images/food5.jpg';
+import image6 from '../images/food_images/food6.jpg';
+import image7 from '../images/food_images/food7.jpg';
+import image8 from '../images/food_images/food8.jpg';
+import image9 from '../images/food_images/food9.jpg';
+import image10 from '../images/food_images/food10.webp';
 
 function Home() {
 
-  const image1 = '/food_images/food1.jpg';
-  const image2 = '/food_images/food2.jpg';
-  const image3 = '/food_images/food1.jpg';
-  const image4 = '/food_images/food1.jpg';
-  const image5 = '/food_images/food1.jpg';
-  const image6 = '/food_images/food1.jpg';
-  const image7 = '/food_images/food1.jpg';
-  const image8 = '/food_images/food1.jpg';
-  const image9 = '/food_images/food1.jpg';
-  const image10 = '/food_images/food1.jpg';
+  // const image1 = '/food_images/food1.jpg';
+  // const image2 = '/food_images/food2.jpg';
+  // const image3 = '/food_images/food1.jpg';
+  // const image4 = '/food_images/food1.jpg';
+  // const image5 = '/food_images/food1.jpg';
+  // const image6 = '/food_images/food1.jpg';
+  // const image7 = '/food_images/food1.jpg';
+  // const image8 = '/food_images/food1.jpg';
+  // const image9 = '/food_images/food1.jpg';
+  // const image10 = '/food_images/food1.jpg';
 
   const foodItems = [
     {
@@ -27,7 +37,6 @@ function Home() {
       image: image1,
       price: '$10',
     },
-
     {
       id: 2,
       title: 'Cholle Bhature',
@@ -41,7 +50,7 @@ function Home() {
       title: 'Dhokla',
       description: 'Description of Food Item 3.',
       restaurant: 'Swadeshi Bhog',
-      image: image1,
+      image: image3,
       price: '$20',
     },
     {
@@ -49,7 +58,7 @@ function Home() {
       title: 'Manchurian',
       description: 'Description of Food Item 4.',
       restaurant: 'Fast Foodies',
-      image: image1,
+      image: image4,
       price: '$20',
     },
     {
@@ -57,7 +66,7 @@ function Home() {
       title: 'Paneer Butter Masala',
       description: 'Description of Food Item 5.',
       restaurant: 'Kunal da Dhaba',
-      image: image1,
+      image: image5,
       price: '$20',
     },
     {
@@ -65,7 +74,7 @@ function Home() {
       title: 'Butter Naan',
       description: 'Description of Food Item 6.',
       restaurant: 'Swadeshi Bhog',
-      image: image1,
+      image: image6,
       price: '$20',
     },
     {
@@ -73,7 +82,7 @@ function Home() {
       title: 'Spring Roll',
       description: 'Description of Food Item 7.',
       restaurant: 'Fast Foodies',
-      image: image1,
+      image: image7,
       price: '$20',
     },
     {
@@ -81,7 +90,7 @@ function Home() {
       title: 'MOMOS',
       description: 'Description of Food Item 8.',
       restaurant: 'Swadeshi Bhog',
-      image: image1,
+      image: image8,
       price: '$20',
     },
     {
@@ -89,7 +98,7 @@ function Home() {
       title: 'Amritsari Kulcha',
       description: 'Description of Food Item 9.',
       restaurant: 'Swadeshi Bhog',
-      image: image1,
+      image: image9,
       price: '$20',
     },
     {
@@ -97,7 +106,7 @@ function Home() {
       title: 'Dosa',
       description: 'Description of Food Item 10.',
       restaurant: 'Southie Eats',
-      image: image1,
+      image: image10,
       price: '$20',
     }
   ];
@@ -121,7 +130,7 @@ function Home() {
       <div className="food-cards">
         {foodItems.map((item) => (
           <div key={item.id} className="food-card">
-            <img id='image_card' src={process.env.PUBLIC_URL + item.image} alt={item.title} />
+            <img className='image_card' src={process.env.PUBLIC_URL + item.image} alt={item.title} />
             <h3>{item.title}</h3>
             <p>By: {item.restaurant}</p>
             <button onClick={() => showDetails(item)}>View Details</button>
