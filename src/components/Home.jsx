@@ -8,6 +8,15 @@ import axios from 'axios';
 function Home() {
 
   const image1 = '/food_images/food1.jpg';
+  const image2 = '/food_images/food2.jpg';
+  const image3 = '/food_images/food1.jpg';
+  const image4 = '/food_images/food1.jpg';
+  const image5 = '/food_images/food1.jpg';
+  const image6 = '/food_images/food1.jpg';
+  const image7 = '/food_images/food1.jpg';
+  const image8 = '/food_images/food1.jpg';
+  const image9 = '/food_images/food1.jpg';
+  const image10 = '/food_images/food1.jpg';
 
   const foodItems = [
     {
@@ -15,7 +24,7 @@ function Home() {
       title: 'Rasgulla',
       description: 'Description of Food Item 1.',
       restaurant: 'Kunal da Dhaba',
-      image: '/food_images/food1.jpg',
+      image: image1,
       price: '$10',
     },
 
@@ -24,7 +33,7 @@ function Home() {
       title: 'Cholle Bhature',
       description: 'Description of Food Item 2.',
       restaurant: 'Swadeshi Bhog',
-      image: image1,
+      image: image2,
       price: '$20',
     },
     {
