@@ -2,33 +2,25 @@ import React from "react";
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
-import image1 from '../images/food_images'
-import image2 from '../images/food_images'
-import image3 from '../images/food_images'
-import image4 from '../images/food_images'
-import image5 from '../images/food_images'
-import image6 from '../images/food_images'
-import image7 from '../images/food_images'
-import image8 from '../images/food_images'
-import image9 from '../images/food_images'
-import image10 from '../images/food_images'
+import axios from 'axios';
+import image1 from '../images/food_images/food1.jpg';
 
-const foodItems = [
-  {
-    id: 1,
-    title: 'Rasgulla',
-    description: 'Description of Food Item 1.',
-    restaurant: 'Kunal da Dhaba',
-    image: image1,
-    price: '$10',
-  },
+  const foodItems = [
+    {
+      id: 1,
+      title: 'Rasgulla',
+      description: 'Description of Food Item 1.',
+      restaurant: 'Kunal da Dhaba',
+      image: '/food_images/food1.jpg',
+      price: '$10',
+    },
 
   {
     id: 2,
     title: 'Cholle Bhature',
     description: 'Description of Food Item 2.',
     restaurant: 'Swadeshi Bhog',
-    image:image1,
+    image: image1,
     price: '$20',
   },
   {
@@ -97,7 +89,6 @@ const foodItems = [
   }
 ];
 
-function Home() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const showDetails = (item) => {
@@ -106,12 +97,18 @@ function Home() {
 
   return (
     <div className="App">
+      <br />
+      <br />
+      <br />
+      <br />
       <h1>Welcome to FoodieStudio</h1><br /><br />
-      <h2> <u>Browse your Favorite food from your Favorite Restaurants</u> </h2><br />
+      <h2>
+        Browse your Favorite food from your Favorite Restaurants
+      </h2><br />
       <div className="food-cards">
         {foodItems.map((item) => (
           <div key={item.id} className="food-card">
-            <img src={item.image} alt={item.title} />
+            <img id='image_card' src={process.env.PUBLIC_URL + item.image} alt={item.title} />
             <h3>{item.title}</h3>
             <p>By: {item.restaurant}</p>
             <button onClick={() => showDetails(item)}>View Details</button>
@@ -122,7 +119,7 @@ function Home() {
       {selectedItem && (
         <div className="details">
           <h2>{selectedItem.title}</h2>
-          <img src={selectedItem.image} alt={selectedItem.title} />
+          <img id="image_show" src={process.env.PUBLIC_URL + selectedItem.image} alt={selectedItem.title} />
           <p>{selectedItem.description}</p>
           <p>Restaurant: {selectedItem.restaurant}</p>
           <p>Price: {selectedItem.price}</p>
