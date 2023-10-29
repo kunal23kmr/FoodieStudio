@@ -13,7 +13,7 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-#**Introduction**
+## Introduction
 
 This document describes the software requirements for the Food Ordering and Delivery System, a web-based platform that facilitates the seamless ordering and delivery of food from various restaurants or eateries to customers. The system aims to provide a user-friendly interface for customers to create accounts, browse menus, place orders (one order can contain multiple items), track deliveries, cancel orders, and make payments. Additionally, the system includes an administration panel for restaurant owners to manage menus, track orders, handle payments, set prices, apply extra charges/discounts, hire delivery carriers, and handle customer feedback. The system also enables providers to receive custom food recipes from customers, allowing customers to publish their recipes through blogs/simple note. Furthermore, if providers wish to add customer-described recipes to their menu, they must pay 1% of every successful order to the customers.
 Problem Statement 
