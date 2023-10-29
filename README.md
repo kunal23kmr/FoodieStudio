@@ -7,33 +7,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#**Introduction**
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-**Introduction**
 This document describes the software requirements for the Food Ordering and Delivery System, a web-based platform that facilitates the seamless ordering and delivery of food from various restaurants or eateries to customers. The system aims to provide a user-friendly interface for customers to create accounts, browse menus, place orders (one order can contain multiple items), track deliveries, cancel orders, and make payments. Additionally, the system includes an administration panel for restaurant owners to manage menus, track orders, handle payments, set prices, apply extra charges/discounts, hire delivery carriers, and handle customer feedback. The system also enables providers to receive custom food recipes from customers, allowing customers to publish their recipes through blogs/simple note. Furthermore, if providers wish to add customer-described recipes to their menu, they must pay 1% of every successful order to the customers.
 Problem Statement 
 The objective of the Food Ordering and Delivery System is to create an efficient and user-friendly platform for customers to order food from various restaurants or eateries. The key features of the system include:
