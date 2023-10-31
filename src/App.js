@@ -11,6 +11,8 @@ import Profile from './components/Profile';
 import ViewProfile from './components/ViewProfile';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import SingleBlog from './components/SingleBlog';
+import CheckOut from './components/CheckOut';
 
 function App() {
 
@@ -22,9 +24,11 @@ function App() {
       <Route path='/contact' element={<Contact />} />
       <Route path='/about' element={<About />} />
       <Route path='/profile' element={<Profile />} />
-      <Route path='/viewprofile' element={<ViewProfile />} />
+      <Route path='/viewProfile' element={<ViewProfile />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
+      <Route path='/singleBlog/:id' element={<SingleBlog />} />
+      <Route path='/checkOut/:id/:price' element={<CheckOut />} />
     </Routes>
   </>
   );

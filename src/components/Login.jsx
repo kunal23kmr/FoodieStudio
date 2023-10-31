@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../css/Login.css';
 import axios from 'axios'
 
-function Login({ fun }) {
+function Login() {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
@@ -43,15 +43,16 @@ function Login({ fun }) {
         axios.post('http://localhost:3001/login', formData)
             .then(res => {
                 console.log(res)
-                fun(res.data[0]);
+                // fun(res.data[0]);
                 setFormData(() => {
                     return {
                         mobile_number: '',
                         password: '',
                     };
                 });
-                alert('Sucessfully Login!');
-                navigate('/profile');
+                alert('Sucessfully Logined!');
+                // console.log('dekho data',res.data[0].user_id)
+                navigate(`/viewProfile/${res.data[0].user_id}`);
             })
             .catch(err => {
                 console.log('Error aaya hai :', err);
