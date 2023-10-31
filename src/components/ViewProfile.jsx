@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 
@@ -12,36 +12,39 @@ function ViewProfile() {
         country: '',
     });
 
-    const { user_id } = useParams();
+    const { id } = useParams(); // Use id to match the route parameter
 
-    axios.post('http://localhost:3001/viewProfile', user_id)
-        .then(res => {
-            console.log(res)
-            const profile = res.data[0];
-            setUser(() => {
-                return {
+    useEffect(() => {
+        // Use a GET request to retrieve user profile data based on the route parameter
+        axios.get(`http://localhost:3001/viewProfile/${id}`)
+            .then(res => {
+                console.log(res);
+                const profile = res.data[0];
+                setUser({
                     first_name: profile.first_name,
                     last_name: profile.last_name,
                     phone_number: profile.mobile_number,
                     city: profile.city,
                     state: profile.state,
                     country: profile.country,
-                }
+                });
             })
-        })
-        .catch(err => {
-            console.log('Error aaya hai :', err);
-        });
+            .catch(err => {
+                console.log('Error aaya hai:', err);
+            });
+    }, [id]); // Use id as a dependency to trigger the request when the parameter changes
 
-
-    // setUser({...}) // get data from database and then update and show.
-    return (<>
-        <h1>View Profile</h1>
-        <h1>Keerti design kregi.</h1>
-        <button>
-
-        </button>
-    </>);
+    return (
+        <>
+            <h1>View Profile</h1>
+            <p>First Name: {user.first_name}</p>
+            <p>Last Name: {user.last_name}</p>
+            <p>Phone Number: {user.phone_number}</p>
+            <p>City: {user.city}</p>
+            <p>State: {user.state}</p>
+            <p>Country: {user.country}</p>
+        </>
+    );
 }
 
 export default ViewProfile;

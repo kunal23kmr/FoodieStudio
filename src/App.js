@@ -24,7 +24,7 @@ function App() {
       <Route path='/contact' element={<Contact />} />
       <Route path='/about' element={<About />} />
       <Route path='/profile' element={<Profile />} />
-      <Route path='/viewProfile' element={<ViewProfile />} />
+      <Route path='/viewProfile/:id' element={<ViewProfile />} />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/singleBlog/:id' element={<SingleBlog />} />
