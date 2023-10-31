@@ -2,11 +2,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import foodItems from './foodItems';
 
-
-
-export default function SingleBlog() {
-
-    
+export default function SingleBlog() {   
     const { id } = useParams();
     console.log('id is', id)
     const item = foodItems.find(item => item.id === +id);
@@ -15,7 +11,6 @@ export default function SingleBlog() {
     const handleClick = () => {
         navigate(`/checkOut/${id}/${item.price}`);
     };
-
 
     console.log(item);
     return (
