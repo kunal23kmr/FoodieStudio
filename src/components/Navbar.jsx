@@ -9,7 +9,7 @@ function Navbar() {
         <nav>
             <Link to={'/'} className='title no-underline'>
                 <h1>
-                    <img className='logo' src='logo.jpg' alt='Logo image' />FoodieStudio
+                    <img className='logo' src='./logo.jpg' alt='Logo image' />FoodieStudio
                 </h1>
             </Link>
             <div className='menu'>

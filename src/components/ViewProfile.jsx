@@ -35,7 +35,7 @@ function ViewProfile() {
     }, [id]); // Use id as a dependency to trigger the request when the parameter changes
 
     return (
-        <>
+        <div>
             <h1>View Profile</h1>
             <p>First Name: {user.first_name}</p>
             <p>Last Name: {user.last_name}</p>
@@ -43,7 +43,7 @@ function ViewProfile() {
             <p>City: {user.city}</p>
             <p>State: {user.state}</p>
             <p>Country: {user.country}</p>
-        </>
+        </div>
     );
 }
 
