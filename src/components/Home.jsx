@@ -6,7 +6,7 @@ import '../css/Home.css';
 import foodItems from "./foodItems";
 
 function Home() {
-  
+
   const navigate = useNavigate();
   const showDetails = (productId) => {
     navigate(`/singleBlog/${productId}`);
