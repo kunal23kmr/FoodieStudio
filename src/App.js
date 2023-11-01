@@ -13,6 +13,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import SingleBlog from './components/SingleBlog';
 import CheckOut from './components/CheckOut';
+import Cart from './components/Cart';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       <Route path='/signup' element={<Signup />} />
       <Route path='/singleBlog/:id' element={<SingleBlog />} />
       <Route path='/checkOut/:id/:price' element={<CheckOut />} />
+      <Route path='/cart' element={<Cart />} />
     </Routes>
   </>
   );
