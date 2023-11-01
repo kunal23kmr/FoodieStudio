@@ -31,7 +31,7 @@ const foodItems = [
         title: 'Dhokla',
         description: 'Description of Food Item 3.',
         restaurant: 'Swadeshi Bhog',
-        image: image3,
+        image: image6,
         price: '$20',
     },
     {
@@ -39,7 +39,7 @@ const foodItems = [
         title: 'Manchurian',
         description: 'Description of Food Item 4.',
         restaurant: 'Fast Foodies',
-        image: image4,
+        image: image3,
         price: '$20',
     },
     {
@@ -47,7 +47,7 @@ const foodItems = [
         title: 'Paneer Butter Masala',
         description: 'Description of Food Item 5.',
         restaurant: 'Kunal da Dhaba',
-        image: image5,
+        image: image4,
         price: '$20',
     },
     {
@@ -55,7 +55,7 @@ const foodItems = [
         title: 'Butter Naan',
         description: 'Description of Food Item 6.',
         restaurant: 'Swadeshi Bhog',
-        image: image6,
+        image: image5,
         price: '$20',
     },
     {
@@ -63,15 +63,15 @@ const foodItems = [
         title: 'Spring Roll',
         description: 'Description of Food Item 7.',
         restaurant: 'Fast Foodies',
-        image: image7,
+        image: image8,
         price: '$20',
     },
     {
         id: 8,
         title: 'MOMOS',
         description: 'Description of Food Item 8.',
-        restaurant: 'Swadeshi Bhog',
-        image: image8,
+        restaurant: 'It is Chinesse Time',
+        image: image9,
         price: '$20',
     },
     {
@@ -79,7 +79,7 @@ const foodItems = [
         title: 'Amritsari Kulcha',
         description: 'Description of Food Item 9.',
         restaurant: 'Swadeshi Bhog',
-        image: image9,
+        image: image7,
         price: '$20',
     },
     {
