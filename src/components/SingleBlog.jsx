@@ -1,21 +1,37 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import foodItems from './foodItems';
-
-
+import axios from 'axios';
 
 export default function SingleBlog() {
-
-    
     const { id } = useParams();
     console.log('id is', id)
     const item = foodItems.find(item => item.id === +id);
     const navigate = useNavigate();
-
     const handleClick = () => {
-        navigate(`/checkOut/${id}/${item.price}`);
-    };
+        //adding item to the cart
+        axios.get(`http://localhost:3001/getuser`)
+            .then(res => {
+                // Handle the response here
+                const user_id = res.data;
+                if (user_id !== -1) {
+                    //next step
+                    axios.post(`http://localhost:3001/singleBlog`,{item_id:id})
+                        .then(res => {
+                            console.log('add ho gya cart me')
+                        })
+                        .catch(err => {
+                            console.log('Error aaya hai add cart krne me:\n', err);
+                        })
+                } else {
+                    navigate('/login');
+                }
+            })
+            .catch(err => {
+                console.log('Error aaya hai pro:', err);
+            });
 
+    };
 
     console.log(item);
     return (
@@ -28,7 +44,7 @@ export default function SingleBlog() {
                         <p>{item.description}</p>
                         <p>Restaurant: {item.restaurant}</p>
                         <p>Price: {item.price}</p>
-                        <button className="buy-button" onClick={() => handleClick()}>Order</button>
+                        <button className="add-to-cart-button" onClick={() => handleClick()}>Add to cart</button>
                     </div>
 
                 </div>

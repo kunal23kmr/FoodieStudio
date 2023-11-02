@@ -2,6 +2,9 @@
     background-color: #fdb14d;
 }
 
+.not_active{
+    background-color: #f5ddbd;}
+
 nav {
     display: flex;
     justify-content: space-between;

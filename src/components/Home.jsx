@@ -1,5 +1,5 @@
 import React from "react";
-// import { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 // import axios from 'axios';
@@ -11,6 +11,7 @@ function Home() {
   const showDetails = (productId) => {
     navigate(`/singleBlog/${productId}`);
   };
+
 
   return (
     <div className="contanior">

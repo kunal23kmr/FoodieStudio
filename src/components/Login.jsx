@@ -51,8 +51,10 @@ function Login() {
                     };
                 });
                 alert('Sucessfully Logined!');
-                // console.log('dekho data',res.data[0].user_id)
+                // fun(true);
                 navigate(`/viewProfile/${res.data[0].user_id}`);
+
+                // console.log('dekho data',res.data[0].user_id)
             })
             .catch(err => {
                 console.log('Error aaya hai :', err);
